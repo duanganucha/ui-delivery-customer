@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>เลือกประเภทบริการ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#EA2831", "background-light": "#f8f6f6", "background-dark": "#211111"}, fontFamily: {display: "Work Sans"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="flex flex-col flex-1">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-10 flex items-center bg-background-light dark:bg-background-dark/80 backdrop-blur-sm p-4 pb-2 justify-between">
+<button class="flex size-12 shrink-0 items-center justify-start text-black dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">เลือกประเภทบริการ</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-black dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- SearchBar -->
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-500 dark:text-slate-400 flex border-none bg-white dark:bg-background-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-black dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-background-dark focus:border-none h-full placeholder:text-slate-500 dark:placeholder:text-slate-400 px-4 pl-2 text-base font-normal leading-normal" placeholder="ค้นหาบริการที่คุณต้องการ" value=""/>
+</div>
+</label>
+</div>
+<!-- Carousel -->
+<div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<div class="flex items-stretch p-4 gap-3 pt-0">
+<div class="flex h-full flex-1 flex-col gap-3 rounded-xl min-w-72 bg-white dark:bg-background-dark p-3">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col" data-alt="Promotional banner for a moving service" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1KN6fPlv6lpHzL2lUA3zRTmhzxMMx-902nR5rGeRoLDuvG4ZClF7n-57fCM3TTzD5ThAtzP5g-GPXCXgLogoBSl3WPPudH5mydBFVQzabE8_JAbJOhDymbl3AZLNQTX3iPL-rCxQ3sYofjqGt-qgTGEMWPIYtIvNFs0RAsS-sgK6CQK_SZa5u-6UuqbQn0lkWZZOh9h3keRPk94lwjJOK1EJNWdjWVo6g_R119SaRxpCb11QeLEiz121_lg4dVU89yT6ZYMcHBgcV");'></div>
+<div>
+<p class="text-black dark:text-white text-base font-medium leading-normal">ส่วนลด 15% สำหรับการจองครั้งแรก</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">ใส่โค้ด NEW15 ตอนชำระเงิน</p>
+</div>
+</div>
+<div class="flex h-full flex-1 flex-col gap-3 rounded-xl min-w-72 bg-white dark:bg-background-dark p-3">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col" data-alt="Moving truck with boxes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAhySXPC9bOL9ZWYLg_LA-qQBNBiufWleXseOEvj_T8IhsA3NjuSFOPtN3ZoWjl0oH5by9AcG48RO1Ic4TE1ekma5KKfIFtpm5tP0_EFtis0TXb3LT-UXzyKpufXXZBDicTubgVY3-XovPse2C7J7ScqcdkomoW9AQ2UWJ2eHdeHYbh8fLlKoTS8ZeWezUkihjwv-ym2Vz530MRTjAgL3-bj34HzqFt-IqfgkY9dWbQz8HOJWErGakJbvxFEjXa3ygc6Pb2AVes9-tl");'></div>
+<div>
+<p class="text-black dark:text-white text-base font-medium leading-normal">จองวันนี้! บริการแพ็คของฟรี!</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">สำหรับบริการย้ายบ้านและคอนโด</p>
+</div>
+</div>
+</div>
+</div>
+<!-- TextGrid -->
+<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+<div class="flex flex-1 gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 flex-col hover:bg-primary/10 dark:hover:bg-primary/20 cursor-pointer transition-colors">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">home</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-black dark:text-white text-base font-bold leading-tight">ขนย้ายบ้าน</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">สำหรับบ้านและทาวน์โฮม</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 flex-col hover:bg-primary/10 dark:hover:bg-primary/20 cursor-pointer transition-colors">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">apartment</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-black dark:text-white text-base font-bold leading-tight">ขนย้ายคอนโด</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">สำหรับห้องชุดและอพาร์ทเม้นท์</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 flex-col hover:bg-primary/10 dark:hover:bg-primary/20 cursor-pointer transition-colors">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">corporate_fare</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-black dark:text-white text-base font-bold leading-tight">ขนย้ายสำนักงาน</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">สำหรับพื้นที่ทำงาน</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 flex-col hover:bg-primary/10 dark:hover:bg-primary/20 cursor-pointer transition-colors">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">potted_plant</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-black dark:text-white text-base font-bold leading-tight">ขนย้ายต้นไม้</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">ดูแลต้นไม้และสวนของคุณ</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 flex-col hover:bg-primary/10 dark:hover:bg-primary/20 cursor-pointer transition-colors">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">bolt</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-black dark:text-white text-base font-bold leading-tight">ขนย้ายด่วน</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">บริการเร่งด่วนถึงที่หมาย</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 flex-col hover:bg-primary/10 dark:hover:bg-primary/20 cursor-pointer transition-colors">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">schedule</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-black dark:text-white text-base font-bold leading-tight">ย้ายใน 24 ชม.</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">จองและย้ายได้ในวันเดียว</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 flex-col hover:bg-primary/10 dark:hover:bg-primary/20 cursor-pointer transition-colors">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">local_shipping</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-black dark:text-white text-base font-bold leading-tight">ขนส่งสินค้าใหญ่</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">สำหรับพัสดุและสินค้าชิ้นใหญ่</p>
+</div>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-4 flex-col hover:bg-primary/10 dark:hover:bg-primary/20 cursor-pointer transition-colors">
+<div class="text-primary"><span class="material-symbols-outlined text-3xl">more_horiz</span></div>
+<div class="flex flex-col gap-1">
+<h2 class="text-black dark:text-white text-base font-bold leading-tight">บริการอื่นๆ</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">สัตว์เลี้ยง, เฟอร์นิเจอร์</p>
+</div>
+</div>
+</div>
+</div>
+<!-- BottomNavBar -->
+<footer class="sticky bottom-0 z-10 flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm px-4 pb-3 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">หน้าหลัก</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">รายการจอง</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">บัญชี</p>
+</a>
+</footer>
+</div>
+</body></html>

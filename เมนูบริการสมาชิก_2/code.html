@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Service App</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1D4ED8", // A modern, trustworthy blue
+              secondary: "#F97316", // An energetic orange for primary actions
+              "background-light": "#F9FAFB",
+              "background-dark": "#111827",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1F2937",
+              "text-light-primary": "#1F2937",
+              "text-dark-primary": "#F9FAFB",
+              "text-light-secondary": "#6B7280",
+              "text-dark-secondary": "#9CA3AF",
+            },
+            fontFamily: {
+              display: ["Sarabun", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+              lg: "1rem",
+              xl: "1.25rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 300,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light-primary dark:text-text-dark-primary">
+<div class="max-w-sm mx-auto flex flex-col min-h-screen">
+<header class="p-4 pt-8">
+<div class="flex items-center space-x-4">
+<div class="w-16 h-16 rounded-full bg-surface-light dark:bg-surface-dark flex items-center justify-center border border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined text-4xl text-text-light-secondary dark:text-text-dark-secondary">
+                    person
+                </span>
+</div>
+<div>
+<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">สวัสดี</p>
+<h1 class="text-xl font-bold">เจมส์ บอนด์</h1>
+</div>
+</div>
+<div class="mt-6">
+<div class="relative flex items-center bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm py-3 px-4">
+<span class="material-symbols-outlined text-primary mr-2">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 p-0 text-text-light-primary dark:text-text-dark-primary placeholder-text-light-secondary dark:placeholder-text-dark-secondary" placeholder="บริการขนส่งที่ไหน" type="text"/>
+<span class="material-symbols-outlined text-primary ml-2">my_location</span>
+</div>
+</div>
+</header>
+<main class="flex-grow p-4">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<button class="flex flex-col items-center justify-center p-4 bg-secondary text-white rounded-xl shadow-md space-y-2 text-center h-28">
+<span class="material-symbols-outlined text-4xl">local_shipping</span>
+<span class="font-semibold text-sm">จองรถด่วน</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm space-y-2 text-center h-28">
+<span class="material-symbols-outlined text-4xl text-primary">event_available</span>
+<span class="font-semibold text-sm text-text-light-primary dark:text-text-dark-primary">จองรถล่วงหน้า</span>
+</button>
+</div>
+<div class="space-y-2">
+<a class="flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg" href="#">
+<div class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-primary">inventory_2</span>
+</div>
+<span class="font-medium text-text-light-primary dark:text-text-dark-primary flex-grow">บริการขนย้ายทั่วไป</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+<a class="flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg" href="#">
+<div class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+</div>
+<span class="font-medium text-text-light-primary dark:text-text-dark-primary flex-grow">ประเภทรถจัดส่ง</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+<a class="flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg" href="#">
+<div class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<span class="font-medium text-text-light-primary dark:text-text-dark-primary flex-grow">ประกันสินค้า</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+<a class="flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg" href="#">
+<div class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+</div>
+<span class="font-medium text-text-light-primary dark:text-text-dark-primary flex-grow">การชำระเงิน</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+<a class="flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg" href="#">
+<div class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+</div>
+<span class="font-medium text-text-light-primary dark:text-text-dark-primary flex-grow">ประวัติใช้บริการ/ภาษี</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+<a class="flex items-center p-4 bg-surface-light dark:bg-surface-dark rounded-lg" href="#">
+<div class="w-10 h-10 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-primary">campaign</span>
+</div>
+<span class="font-medium text-text-light-primary dark:text-text-dark-primary flex-grow">โปรโมชั่น</span>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">chevron_right</span>
+</a>
+</div>
+</main>
+</div>
+
+</body></html>

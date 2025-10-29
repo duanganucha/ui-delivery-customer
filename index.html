@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI ผู้ใช้บริการแอป - Delivery StatusUp</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 40px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 40px;
+        font-size: 1.2em;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .screen-item {
+        background: #f8f9fa;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      .screen-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .screen-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-bottom: 3px solid #667eea;
+      }
+
+      .screen-info {
+        padding: 20px;
+      }
+
+      .screen-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .screen-number {
+        display: inline-block;
+        background: #667eea;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        margin-top: 8px;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        animation: fadeIn 0.3s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 1001;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #bbb;
+      }
+
+      .caption {
+        text-align: center;
+        color: #ccc;
+        padding: 20px;
+        font-size: 1.2em;
+      }
+
+      /* Navigation Buttons */
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 30px;
+        padding: 20px 15px;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s;
+        z-index: 1001;
+        user-select: none;
+        border-radius: 5px;
+      }
+
+      .nav-btn:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .prev-btn {
+        left: 20px;
+      }
+
+      .next-btn {
+        right: 20px;
+      }
+
+      .nav-btn:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+
+      .nav-btn:disabled:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 1.8em;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📱 UI ผู้ใช้บริการแอป</h1>
+      <p class="subtitle">Delivery StatusUp - แอปพลิเคชันจัดส่งสินค้า</p>
+
+      <div class="gallery">
+        <!-- หน้าจอต้อนรับและเข้าสู่ระบบ -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="หน้าจอต้อนรับและเข้าสู่ระบบ/screen.png"
+            alt="หน้าจอต้อนรับและเข้าสู่ระบบ"
+          />
+          <div class="screen-info">
+            <div class="screen-title">หน้าจอต้อนรับและเข้าสู่ระบบ</div>
+            <span class="screen-number">หน้า 1</span>
+          </div>
+        </div>
+
+        <!-- หน้าจอเลือกการเข้าสู่ระบบ -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="หน้าจอเลือกการเข้าสู่ระบบ/screen.png"
+            alt="หน้าจอเลือกการเข้าสู่ระบบ"
+          />
+          <div class="screen-info">
+            <div class="screen-title">หน้าจอเลือกการเข้าสู่ระบบ</div>
+            <span class="screen-number">หน้า 2</span>
+          </div>
+        </div>
+
+        <!-- หน้าจอลงทะเบียน -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="หน้าจอลงทะเบียน/กรอกข้อมูลผู้ใช้/screen.png"
+            alt="หน้าจอลงทะเบียน"
+          />
+          <div class="screen-info">
+            <div class="screen-title">หน้าจอลงทะเบียน</div>
+            <span class="screen-number">หน้า 3</span>
+          </div>
+        </div>
+
+        <!-- หน้าจอคำขออนุญาตตำแหน่ง -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="หน้าจอคำขออนุญาตตำแหน่ง/screen.png"
+            alt="หน้าจอคำขออนุญาตตำแหน่ง"
+          />
+          <div class="screen-info">
+            <div class="screen-title">หน้าจอคำขออนุญาตตำแหน่ง</div>
+            <span class="screen-number">หน้า 4</span>
+          </div>
+        </div>
+
+        <!-- เมนูบริการสมาชิก 1 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img src="เมนูบริการสมาชิก_1/screen.png" alt="เมนูบริการสมาชิก 1" />
+          <div class="screen-info">
+            <div class="screen-title">เมนูบริการสมาชิก</div>
+            <span class="screen-number">หน้า 5</span>
+          </div>
+        </div>
+
+        <!-- เมนูบริการสมาชิก 2 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img src="เมนูบริการสมาชิก_2/screen.png" alt="เมนูบริการสมาชิก 2" />
+          <div class="screen-info">
+            <div class="screen-title">เมนูบริการสมาชิก (แสดงเมนู)</div>
+            <span class="screen-number">หน้า 6</span>
+          </div>
+        </div>
+
+        <!-- เมนูบริการขนย้ายทั่วไป 1 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="เมนูบริการขนย้ายทั่วไป_1/screen.png"
+            alt="เมนูบริการขนย้ายทั่วไป 1"
+          />
+          <div class="screen-info">
+            <div class="screen-title">เมนูบริการขนย้ายทั่วไป</div>
+            <span class="screen-number">หน้า 7</span>
+          </div>
+        </div>
+
+        <!-- เมนูบริการขนย้ายทั่วไป 2 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="เมนูบริการขนย้ายทั่วไป_2/screen.png"
+            alt="เมนูบริการขนย้ายทั่วไป 2"
+          />
+          <div class="screen-info">
+            <div class="screen-title">เมนูบริการขนย้ายทั่วไป (แสดงเมนู)</div>
+            <span class="screen-number">หน้า 8</span>
+          </div>
+        </div>
+
+        <!-- ค้นหาตำแหน่งรถด่วน 1 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ค้นหาตำแหน่งรถด่วน_1/screen.png"
+            alt="ค้นหาตำแหน่งรถด่วน 1"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ค้นหาตำแหน่งรถด่วน</div>
+            <span class="screen-number">หน้า 9</span>
+          </div>
+        </div>
+
+        <!-- ค้นหาตำแหน่งรถด่วน 2 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ค้นหาตำแหน่งรถด่วน_2/screen.png"
+            alt="ค้นหาตำแหน่งรถด่วน 2"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ค้นหาตำแหน่งรถด่วน (กำลังค้นหา)</div>
+            <span class="screen-number">หน้า 10</span>
+          </div>
+        </div>
+
+        <!-- ค้นหาตำแหน่งจองรถล่วงหน้า -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ค้นหาตำแหน่งจองรถล่วงหน้า/screen.png"
+            alt="ค้นหาตำแหน่งจองรถล่วงหน้า"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ค้นหาตำแหน่งจองรถล่วงหน้า</div>
+            <span class="screen-number">หน้า 11</span>
+          </div>
+        </div>
+
+        <!-- ประเภทรถจัดส่งและเวลารับ 1 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ประเภทรถจัดส่งและเวลารับ_1/screen.png"
+            alt="ประเภทรถจัดส่งและเวลารับ 1"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ประเภทรถจัดส่งและเวลารับ</div>
+            <span class="screen-number">หน้า 12</span>
+          </div>
+        </div>
+
+        <!-- ประเภทรถจัดส่งและเวลารับ 2 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ประเภทรถจัดส่งและเวลารับ_2/screen.png"
+            alt="ประเภทรถจัดส่งและเวลารับ 2"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ประเภทรถจัดส่งและเวลารับ (เลือกเวลา)</div>
+            <span class="screen-number">หน้า 13</span>
+          </div>
+        </div>
+
+        <!-- ยืนยันคำสั่งบริการ 1 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ยืนยันคำสั่งบริการ_1/screen.png"
+            alt="ยืนยันคำสั่งบริการ 1"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ยืนยันคำสั่งบริการ</div>
+            <span class="screen-number">หน้า 14</span>
+          </div>
+        </div>
+
+        <!-- ยืนยันคำสั่งบริการ 2 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ยืนยันคำสั่งบริการ_2/screen.png"
+            alt="ยืนยันคำสั่งบริการ 2"
+          />
+          <div class="screen-info">
+            <div class="screen-title">
+              ยืนยันคำสั่งบริการ (รายละเอียดเพิ่มเติม)
+            </div>
+            <span class="screen-number">หน้า 15</span>
+          </div>
+        </div>
+
+        <!-- ยืนยันคำสั่งบริการ 3 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ยืนยันคำสั่งบริการ_3/screen.png"
+            alt="ยืนยันคำสั่งบริการ 3"
+          />
+          <div class="screen-info">
+            <div class="screen-title">
+              ยืนยันคำสั่งบริการ (ยืนยันขั้นสุดท้าย)
+            </div>
+            <span class="screen-number">หน้า 16</span>
+          </div>
+        </div>
+
+        <!-- ชำระเงินและโปรโมชั่น -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ชำระเงินและโปรโมชั่น/screen.png"
+            alt="ชำระเงินและโปรโมชั่น"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ชำระเงินและโปรโมชั่น</div>
+            <span class="screen-number">หน้า 17</span>
+          </div>
+        </div>
+
+        <!-- ประกันสินค้า 1 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img src="ประกันสินค้า_1/screen.png" alt="ประกันสินค้า 1" />
+          <div class="screen-info">
+            <div class="screen-title">ประกันสินค้า</div>
+            <span class="screen-number">หน้า 18</span>
+          </div>
+        </div>
+
+        <!-- ประกันสินค้า 2 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img src="ประกันสินค้า_2/screen.png" alt="ประกันสินค้า 2" />
+          <div class="screen-info">
+            <div class="screen-title">ประกันสินค้า (รายละเอียด)</div>
+            <span class="screen-number">หน้า 19</span>
+          </div>
+        </div>
+
+        <!-- ติดตามสถานะการจัดส่ง 1 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ติดตามสถานะการจัดส่ง_1/screen.png"
+            alt="ติดตามสถานะการจัดส่ง 1"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ติดตามสถานะการจัดส่ง</div>
+            <span class="screen-number">หน้า 20</span>
+          </div>
+        </div>
+
+        <!-- ติดตามสถานะการจัดส่ง 2 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ติดตามสถานะการจัดส่ง_2/screen.png"
+            alt="ติดตามสถานะการจัดส่ง 2"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ติดตามสถานะการจัดส่ง (กำลังส่ง)</div>
+            <span class="screen-number">หน้า 21</span>
+          </div>
+        </div>
+
+        <!-- ประเมินคนขับและบริการ 1 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ประเมินคนขับและบริการ_1/screen.png"
+            alt="ประเมินคนขับและบริการ 1"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ประเมินคนขับและบริการ</div>
+            <span class="screen-number">หน้า 22</span>
+          </div>
+        </div>
+
+        <!-- ประเมินคนขับและบริการ 2 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ประเมินคนขับและบริการ_2/screen.png"
+            alt="ประเมินคนขับและบริการ 2"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ประเมินคนขับและบริการ (เพิ่มคำแนะนำ)</div>
+            <span class="screen-number">หน้า 23</span>
+          </div>
+        </div>
+
+        <!-- ประวัติการจัดส่งสำเร็จ -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="ประวัติการจัดส่งสำเร็จ/screen.png"
+            alt="ประวัติการจัดส่งสำเร็จ"
+          />
+          <div class="screen-info">
+            <div class="screen-title">ประวัติการจัดส่งสำเร็จ</div>
+            <span class="screen-number">หน้า 24</span>
+          </div>
+        </div>
+
+        <!-- หน้าจอโปรไฟล์ผู้ใช้ 1 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="หน้าจอโปรไฟล์ผู้ใช้_1/screen.png"
+            alt="หน้าจอโปรไฟล์ผู้ใช้ 1"
+          />
+          <div class="screen-info">
+            <div class="screen-title">หน้าจอโปรไฟล์ผู้ใช้</div>
+            <span class="screen-number">หน้า 25</span>
+          </div>
+        </div>
+
+        <!-- หน้าจอโปรไฟล์ผู้ใช้ 2 -->
+        <div class="screen-item" onclick="openModal(this)">
+          <img
+            src="หน้าจอโปรไฟล์ผู้ใช้_2/screen.png"
+            alt="หน้าจอโปรไฟล์ผู้ใช้ 2"
+          />
+          <div class="screen-info">
+            <div class="screen-title">หน้าจอโปรไฟล์ผู้ใช้ (แก้ไข)</div>
+            <span class="screen-number">หน้า 26</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <button class="nav-btn prev-btn" onclick="event.stopPropagation(); navigateImage(-1)" id="prevBtn">&#10094;</button>
+      <img class="modal-content" id="modalImg" onclick="event.stopPropagation()" />
+      <button class="nav-btn next-btn" onclick="event.stopPropagation(); navigateImage(1)" id="nextBtn">&#10095;</button>
+      <div class="caption" id="caption"></div>
+    </div>
+
+    <script>
+      let currentImageIndex = 0;
+      let allScreenItems = [];
+
+      // Initialize screen items array on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        allScreenItems = Array.from(document.querySelectorAll('.screen-item'));
+      });
+
+      function openModal(element) {
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("modalImg");
+        const caption = document.getElementById("caption");
+
+        const img = element.querySelector("img");
+        const title = element.querySelector(".screen-title").textContent;
+
+        // Find current image index
+        currentImageIndex = allScreenItems.indexOf(element);
+
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        caption.textContent = title;
+
+        // Update navigation buttons
+        updateNavigationButtons();
+
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      function navigateImage(direction) {
+        currentImageIndex += direction;
+
+        // Ensure index stays within bounds
+        if (currentImageIndex < 0) {
+          currentImageIndex = 0;
+        } else if (currentImageIndex >= allScreenItems.length) {
+          currentImageIndex = allScreenItems.length - 1;
+        }
+
+        // Update modal content
+        const currentItem = allScreenItems[currentImageIndex];
+        const img = currentItem.querySelector("img");
+        const title = currentItem.querySelector(".screen-title").textContent;
+
+        document.getElementById("modalImg").src = img.src;
+        document.getElementById("caption").textContent = title;
+
+        // Update navigation buttons
+        updateNavigationButtons();
+      }
+
+      function updateNavigationButtons() {
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        // Disable prev button if at first image
+        prevBtn.disabled = currentImageIndex === 0;
+
+        // Disable next button if at last image
+        nextBtn.disabled = currentImageIndex === allScreenItems.length - 1;
+      }
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (event) {
+        const modal = document.getElementById("myModal");
+        if (modal.style.display === "block") {
+          if (event.key === "Escape") {
+            closeModal();
+          } else if (event.key === "ArrowLeft") {
+            navigateImage(-1);
+          } else if (event.key === "ArrowRight") {
+            navigateImage(1);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

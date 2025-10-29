@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ยืนยันคำสั่งบริการ</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#E75D5C",
+            "background-light": "#F7F8FC",
+            "background-dark": "#121212",
+            "surface-light": "#FFFFFF",
+            "surface-dark": "#1E1E1E",
+            "text-light-primary": "#212121",
+            "text-dark-primary": "#FFFFFF",
+            "text-light-secondary": "#616161",
+            "text-dark-secondary": "#BDBDBD",
+            "border-light": "#EEEEEE",
+            "border-dark": "#333333",
+            "info-bg-light": "#E3F2FD",
+            "info-bg-dark": "#1E3A8A",
+            "info-text-light": "#1565C0",
+            "info-text-dark": "#BBDEFB",
+          },
+          fontFamily: {
+            display: ["Sarabun", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "12px",
+            lg: "16px",
+            xl: "20px",
+          },
+        },
+      },
+    };
+  </script>
+<style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light-primary dark:text-dark-primary">
+<div class="max-w-sm mx-auto pb-48">
+<div class="p-4 sticky top-0 bg-background-light dark:bg-background-dark z-10">
+<div class="flex items-center justify-between">
+<button class="p-2">
+<span class="material-symbols-outlined text-text-light-primary dark:text-dark-primary">arrow_back_ios_new</span>
+</button>
+<h1 class="text-xl font-bold">ยืนยันการบริการ</h1>
+<div class="w-10"></div>
+</div>
+</div>
+<div class="px-4 space-y-5">
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-border-light dark:border-border-dark">
+<div class="flex items-center space-x-3 mb-4">
+<div class="bg-primary/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+</div>
+<h2 class="text-lg font-semibold">รายละเอียดบริการ</h2>
+</div>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between items-center">
+<span class="text-text-light-secondary dark:text-dark-secondary">ประเภทบริการ</span>
+<span class="font-medium">บริการจองรถด่วน</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-light-secondary dark:text-dark-secondary">ประเภทรถ</span>
+<span class="font-medium">รถบรรทุก 4 ล้อทึบ</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-light-secondary dark:text-dark-secondary">วัน-เวลา</span>
+<span class="font-medium">14 ส.ค. 2568, 14:45 น.</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-light-secondary dark:text-dark-secondary">การขนส่ง</span>
+<span class="font-medium">ขนส่งแบบปกติ</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-text-light-secondary dark:text-dark-secondary">ประกันสินค้า</span>
+<span class="font-medium text-info-text-light dark:text-info-text-dark">฿1,500</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-border-light dark:border-border-dark">
+<div class="flex items-start space-x-3">
+<div class="bg-primary/10 p-2 rounded-full mt-1">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<h3 class="font-semibold text-lg">ที่อยู่ปลายทาง</h3>
+<p class="text-sm text-text-light-secondary dark:text-dark-secondary mt-1">บ้านเลขที่ ...</p>
+<button class="mt-3 text-sm text-primary font-medium flex items-center space-x-1">
+<span class="material-symbols-outlined text-base">edit</span>
+<span>แก้ไขหรือเพิ่มที่อยู่</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl p-4 shadow-sm border border-border-light dark:border-border-dark">
+<div class="flex items-center space-x-3 mb-4">
+<div class="bg-green-500/10 p-2 rounded-full">
+<span class="material-symbols-outlined text-green-500">payments</span>
+</div>
+<h2 class="text-lg font-semibold">การชำระเงิน</h2>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between border border-primary bg-primary/5 dark:bg-primary/20 p-3 rounded-lg">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-blue-500">credit_card</span>
+<p class="font-medium">บัตรเครดิต</p>
+<span class="text-xs bg-gray-200 dark:bg-gray-600 px-2 py-0.5 rounded-full">...3201</span>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-primary bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">check</span>
+</div>
+</div>
+<div class="flex items-center justify-between border border-border-light dark:border-border-dark p-3 rounded-lg">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-green-500">payments</span>
+<p class="text-text-light-secondary dark:text-dark-secondary">เงินสด</p>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-gray-300 dark:border-gray-500"></div>
+</div>
+</div>
+<div class="mt-4 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-orange-400">confirmation_number</span>
+<input class="w-full bg-background-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-lg focus:ring-primary focus:border-primary text-sm pl-10 pr-3 py-2.5" placeholder="ใช้ส่วนลดคูปอง" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 max-w-sm mx-auto bg-surface-light dark:bg-surface-dark p-4 pt-3 border-t border-border-light dark:border-border-dark shadow-[0_-4px_12px_rgba(0,0,0,0.05)] dark:shadow-[0_-4px_12px_rgba(0,0,0,0.2)] rounded-t-xl">
+<div class="flex justify-between items-center mb-3">
+<div class="flex items-center space-x-1.5">
+<span class="text-lg font-medium text-text-light-secondary dark:text-dark-secondary">ยอดรวม</span>
+<span class="material-symbols-outlined text-sm text-text-light-secondary dark:text-dark-secondary cursor-pointer">info</span>
+</div>
+<div class="text-right">
+<span class="text-2xl font-bold text-text-light-primary dark:text-dark-primary">฿4,500</span>
+<p class="text-xs text-text-light-secondary dark:text-dark-secondary">ราคารวมภาษีแล้ว</p>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-3.5 rounded-xl text-lg font-semibold shadow-lg shadow-primary/30 hover:bg-red-600 active:bg-red-700 transition-all transform hover:scale-[1.02] active:scale-100 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-surface-dark">
+      ยืนยันการบริการ
+  </button>
+</div>
+
+</body></html>

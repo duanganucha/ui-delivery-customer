@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rate Your Delivery</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-slate-900 dark:text-slate-200 flex size-12 shrink-0 items-center justify-start">
+</div>
+<h2 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">ให้คะแนนการจัดส่ง</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-slate-900 dark:text-slate-200 gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-200">close</span>
+</button>
+</div>
+</div>
+<!-- ProfileHeader -->
+<div class="flex p-4 @container">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32" data-alt="Profile picture of John Doe, a delivery driver" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyDi-4RCg3ZiyqBrwTf8iVL6PXJoSdbLk5fpmwtTXnCOuIOd4NoQ38cP4y1N0WScWASfH846b9EeGr8Nq3XcmkaLNx_NHtC7j7eEVC74GJylbVLBSgsddZPrXPhw7DvNSzNXPH9m2ccBCJWUfE1uSFZ7bu6UwkLL12navHDs0Klx6rpUmDutiag7iH4M0h5zsoLFQTH5V6u5_tRTB-SU20SiF5MS8K21do8uS2O4Jl9hcWI-8lKrY_-BhKfZh2OiVdd3q-bSyW_thL");'></div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-slate-900 dark:text-slate-50 text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">คุณพึงพอใจกับการจัดส่งครั้งนี้แค่ไหน?</p>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal text-center">ให้คะแนน John Doe</p>
+</div>
+</div>
+</div>
+</div>
+<!-- ReactionBar -->
+<div class="flex items-center justify-center gap-4 px-4 py-2">
+<span class="material-symbols-outlined text-yellow-400 text-4xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-4xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-4xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-4xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-4xl cursor-pointer">star</span>
+</div>
+<!-- SectionHeader -->
+<h3 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-8">มีอะไรจะบอกเราเพิ่มเติมไหม?</h3>
+<!-- Chips -->
+<div class="flex gap-3 px-4 py-2 flex-wrap">
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-lg bg-primary/20 pl-4 pr-4">
+<p class="text-primary text-sm font-medium leading-normal">สุภาพ</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-slate-800 pl-4 pr-4">
+<p class="text-slate-800 dark:text-slate-300 text-sm font-medium leading-normal">ตรงต่อเวลา</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-slate-800 pl-4 pr-4">
+<p class="text-slate-800 dark:text-slate-300 text-sm font-medium leading-normal">จัดการพัสดุอย่างดี</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-slate-800 pl-4 pr-4">
+<p class="text-slate-800 dark:text-slate-300 text-sm font-medium leading-normal">มืออาชีพ</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-lg bg-slate-200 dark:bg-slate-800 pl-4 pr-4">
+<p class="text-slate-800 dark:text-slate-300 text-sm font-medium leading-normal">รวดเร็ว</p>
+</div>
+</div>
+<!-- Text Area -->
+<div class="p-4">
+<textarea class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark p-3 text-slate-900 dark:text-slate-200 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary focus:ring-primary" placeholder="บอกเราเพิ่มเติมเกี่ยวกับประสบการณ์ของคุณ..." rows="4"></textarea>
+</div>
+<!-- Spacer -->
+<div class="flex-grow"></div>
+<!-- CTA Button -->
+<div class="p-4 pt-8 sticky bottom-0 bg-background-light dark:bg-background-dark">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-primary text-white gap-2 text-base font-bold leading-normal tracking-[0.015em]">
+<span>ส่งความคิดเห็น</span>
+</button>
+</div>
+</div>
+</body></html>

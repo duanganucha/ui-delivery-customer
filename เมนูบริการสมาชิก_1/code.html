@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Delivery Service App</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#EF4444", // Red color from the icons
+              "background-light": "#FFFFFF",
+              "background-dark": "#121212",
+              "surface-light": "#F3F4F6",
+              "surface-dark": "#1E1E1E",
+              "text-light-primary": "#111827",
+              "text-dark-primary": "#FFFFFF",
+              "text-light-secondary": "#6B7280",
+              "text-dark-secondary": "#9CA3AF",
+            },
+            fontFamily: {
+              display: ["Sarabun", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="max-w-sm mx-auto p-4">
+<header class="flex flex-col items-center pt-8 pb-6">
+<div class="w-24 h-24 rounded-full bg-surface-light dark:bg-surface-dark flex items-center justify-center mb-4">
+<span class="material-icons text-5xl text-text-light-secondary dark:text-text-dark-secondary">
+                    person
+                </span>
+</div>
+<h1 class="text-xl font-bold text-text-light-primary dark:text-text-dark-primary">เจมส์ บอนด์</h1>
+</header>
+<div class="mb-6">
+<div class="relative flex items-center bg-surface-light dark:bg-surface-dark rounded-full shadow-sm py-3 px-4">
+<span class="material-icons text-primary">location_on</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-text-light-secondary dark:text-text-dark-secondary placeholder-text-light-secondary dark:placeholder-text-dark-secondary" placeholder="บริการขนส่งที่ไหน" type="text"/>
+<span class="material-icons text-primary">my_location</span>
+</div>
+</div>
+<main class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm text-left">
+<span class="font-semibold text-sm text-text-light-primary dark:text-text-dark-primary">จองรถด่วน</span>
+<img alt="Express delivery truck icon" class="w-10 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9ZalMJmL2sP8hooX8x_9l5e0L2aVJ9iXlBZCv6hz4W_2uDSWPJZ4z4GPDtqmKbFlsMKwcqxGT3etqop9bz5Ul_7uN132Sj8ELReCs8_BxDljSEB3D_uHUy7860iFYBdvhs7mh-9Fshfbc602LlPprwfTTNKX2MNNkd_7wlqgPOB_rH1WCRsKIJ0p8DuQ6V74hmM2oUf0q_ml7SAtEPHNFkyP1l6fgLvUKmh-07aQyO0KAKq-84my8RRtFgl7gdmWSteRG-BO8-TIF"/>
+</button>
+<button class="flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm text-left">
+<span class="font-semibold text-sm text-text-light-primary dark:text-text-dark-primary">จองรถล่วงหน้า</span>
+<img alt="Scheduled delivery truck icon" class="w-10 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtXrSsSh4izfhOc5O-UsdBK19dEqsSKBfTe0t__43tqppmzQwDwNA2KJWWwjUIPfYJ4sAYR66LHRXBItnhnrgmrVMWWKro-wZtcHhVwfXn8d5UWFZkHSafoWRoCfZxheaW1qjWgK0XLKiuGO8a4gUg_mX_9SUEc3WosWKAWWfWPi09Oaj9OQ3sJQXA2HFFL4Z-ySAYxetpwgLFNDYAp1sZvd86h6duTLDte84qzM2tIFQCmqKA8-UHisf4FLojxXvIJLQGfCDa6K95"/>
+</button>
+<button class="flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm text-left">
+<span class="font-semibold text-sm text-text-light-primary dark:text-text-dark-primary">บริการขนย้ายทั่วไป</span>
+<img alt="Moving service icon" class="w-10 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD52r_AkMtr0LjChF-p6B5bDvgMovmeu14lvVzEUdJa2_CMeyT5EJ2xaMw4UX1eLyMmjqQQVN_PrZ9fn3EQA_j_1sqGa_5hRAcqtlF1X45pm6Sa7BbV4wD2Mjas9GCY-m9tUriuJIbWR8c40Eje0KV6cReWsotdQ4VKtkvlNuwwT8gCQsnr7NlM1fgkQTa-z5-VWo2w6Bq5B8znz1udPStR1FopijI0Xnin_UuOrL-NSWRrPEBeRtog1quH7R3wfKibE_I1-xn3Qmu"/>
+</button>
+<button class="flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm text-left">
+<span class="font-semibold text-sm text-text-light-primary dark:text-text-dark-primary">ประเภทรถจัดส่ง</span>
+<img alt="Delivery truck types icon" class="w-10 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJp7__T1ZVqhlwbHAcg7l-Uy71j9zPX37FDPvj4flvZaf7GCSbG3I4JM-RL-7K1FV1IZFYtOBxjcNPQZk-hRFW-cJbxPD3R8oo6zKg5q13m8kFUk14wc_6aOXd_RsawoQCXvXZid2PWPBGi8tCYq9sQEnPkkMvL8tSPzJA_uZRaw8clhTXtQEQ2ZhUrA5Mbx8u0AmCOaG7uzYESRRZrcfCenlhFG-01gQcVTtqP2DwovHKVD2EUB4eAeflXzEqIVZ6sXO5loo5PMRM"/>
+</button>
+<button class="flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm text-left">
+<span class="font-semibold text-sm text-text-light-primary dark:text-text-dark-primary">ประกันสินค้า</span>
+<img alt="Product insurance icon" class="w-10 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQo5ZPAp1A9OU9xgr99LjteSlwMFuqF7VI_JEg00gAxMCEl-io2yV1gm6fGIJvs6GS0gPAFTlhQNd1T4xrabmpQloym-2VdT1uPWWJiPyZyUoYlzypReuQjkY1IrHMKh7rZWeFWskrDtNA1k89eLl2PV_3c0kDvBBEuhZVSv8QbhCwipmH9_xdXNC4qWx0UZSuGFFlguWqK0-3KB7b5t9Fzm-5K4ZzD1KGORkWn3dMLsPQLZcpx4aMGQ-vmFj763TdlZGWfVSYFZIe"/>
+</button>
+<button class="flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm text-left">
+<span class="font-semibold text-sm text-text-light-primary dark:text-text-dark-primary">การชำระเงิน</span>
+<img alt="Payment icon" class="w-10 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoMMfj3FUlJf-vUkfiTbfrghts-sDUOKyQQWavZf94cn8R-cD2bf1GqDK9OxoOSPbBgvlHbDn9pby6G1N1R2TFpHTCiYE334uaU83vdnloM8BKEAqFACdapiayBo8i88fWmTPU-loHLeJMzFTLnbx-X-vC7iVvz8VthSe_Y1370JN0h_8chQ3hAo8LAkdOEn2QqZMO6rp74zx6Ay1IsvekUojgtIWzo5X6UHdBY7uL6OakMnSxt4akJpbjPRZTuPmZMFKlw8n-ZqDg"/>
+</button>
+<button class="flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm text-left">
+<span class="font-semibold text-sm text-text-light-primary dark:text-text-dark-primary">ประวัติใช้บริการ/ภาษี</span>
+<img alt="Service history and tax icon" class="w-10 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn9L7VXNOOsIMFWyvoS_3qDzMezOVbQcp5vYx17P-cE9A1CtQ40sdyx_asFpJ1WENVaLiBiLCYoI5_QnFDzEdcz6TUIpZqjI9EmzBHGlLQk6wCKn8WAi8weLvoROq3ECNFWSq9iP8JTrL_dO7QTVdOPuhtAbS5w6OlN0jOx_96pgxkkubOwhBOoQYMWpkEYtHR1dSR4iP0Jw5utgG4dWvXOdjicG5cgQBSV7RV8-c10Z2SXfNbFJpazR7gme-ylhcrP-_4Z966rXCV"/>
+</button>
+<button class="flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-lg shadow-sm text-left">
+<span class="font-semibold text-sm text-text-light-primary dark:text-text-dark-primary">โปรโมชั่น</span>
+<img alt="Promotions icon" class="w-10 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQHEkiklvnulbO-aoAclt_WzWc9topxMLe7HeGDOzSohcR4CPFT2QVhfmRfo9Mnzg489uwTcBN56ApCxzTR0pUc_iU7kgX_bJIp4N1SrB0z6wZ3EVZDuNbNuzMLf2h9Vmb4CQBIUGIFJggzmq_E_1lXDaVkQIRe3x12-bA6hPNiWcF3lLT4rslILrX_298HIoMCaSh9NnwEUNmKvdrhyKNKQ1QqTU2nqVKjmvsZWtqwPXHfaMhhZ9gNRosq5zBepJN6IUFQk2dmC-d"/>
+</button>
+</main>
+</div>
+
+</body></html>

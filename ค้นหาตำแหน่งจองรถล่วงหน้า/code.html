@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Advance Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1A73E8",
+              "background-light": "#FFFFFF",
+              "background-dark": "#101922",
+              "neutral-light": "#F1F3F4",
+              "neutral-dark": "#202124",
+              "text-light": "#202124",
+              "text-dark": "#F1F3F4",
+              "accent": "#34A853"
+            },
+            fontFamily: {
+              "display": ["Work Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex h-16 w-full items-center border-b border-neutral-light bg-background-light/80 px-4 backdrop-blur-sm dark:border-neutral-dark/20 dark:bg-background-dark/80">
+<button class="flex size-10 items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-2xl text-text-light dark:text-text-dark">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold pr-10">จองรถล่วงหน้า</h1>
+</header>
+<!-- Main Content -->
+<main class="flex-1 pb-32">
+<!-- Map -->
+<div class="p-4">
+<div class="aspect-video w-full rounded-xl bg-cover bg-center" data-alt="Map view showing pickup and destination pins with a route." data-location="Bangkok, Thailand" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBK5CK3AmavtzQfetA3tYupUrZgT0cK9KYUxL9JuqVGR9fKkiJev5yF9DFN7vVoVeuTihWNxoYKxrV_XnF5xl244Gs2Znk6eUf3cn4ri_J_HMdsysh_pKa0cH_w-s0CwcV-O6hSVU50cq4a7LDFUINSXmieoqjGqPwUeiuFIIjSjeyzXiAMqA2g1SWgLRMn_Eksq6Wp0ePbUggMDQlUwLAQ8Z67Q1Mo6NifDvMDOq-B0PxH_kQSQ-9efJouypf4p685R8blGg63DCNB");'></div>
+</div>
+<!-- Location Inputs -->
+<div class="space-y-4 px-4">
+<div class="relative">
+<span class="material-symbols-outlined pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-primary">trip_origin</span>
+<input class="form-input h-14 w-full rounded-lg border-neutral-light bg-neutral-light pl-12 pr-4 text-text-light placeholder:text-text-light/60 focus:border-primary focus:ring-1 focus:ring-primary dark:border-neutral-dark/50 dark:bg-neutral-dark/80 dark:text-text-dark dark:placeholder:text-text-dark/60" placeholder="ระบุตำแหน่งต้นทาง" value=""/>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-accent">location_on</span>
+<input class="form-input h-14 w-full rounded-lg border-neutral-light bg-neutral-light pl-12 pr-4 text-text-light placeholder:text-text-light/60 focus:border-primary focus:ring-1 focus:ring-primary dark:border-neutral-dark/50 dark:bg-neutral-dark/80 dark:text-text-dark dark:placeholder:text-text-dark/60" placeholder="ระบุตำแหน่งปลายทาง" value=""/>
+</div>
+</div>
+<!-- Date & Time Picker -->
+<div class="px-4 pt-6">
+<p class="mb-2 text-base font-medium">เลือกวันและเวลา</p>
+<div class="flex gap-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-text-light/70 dark:text-text-dark/70">calendar_today</span>
+<input class="form-input h-14 w-full cursor-pointer rounded-lg border-neutral-light bg-neutral-light pl-12 pr-4 text-text-light placeholder:text-text-light/60 focus:border-primary focus:ring-1 focus:ring-primary dark:border-neutral-dark/50 dark:bg-neutral-dark/80 dark:text-text-dark dark:placeholder:text-text-dark/60" value="วันนี้, 16 ต.ค."/>
+</div>
+<div class="relative flex-1">
+<span class="material-symbols-outlined pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-text-light/70 dark:text-text-dark/70">schedule</span>
+<input class="form-input h-14 w-full cursor-pointer rounded-lg border-neutral-light bg-neutral-light pl-12 pr-4 text-text-light placeholder:text-text-light/60 focus:border-primary focus:ring-1 focus:ring-primary dark:border-neutral-dark/50 dark:bg-neutral-dark/80 dark:text-text-dark dark:placeholder:text-text-dark/60" value="14:30"/>
+</div>
+</div>
+</div>
+<!-- Vehicle Selector -->
+<div class="pt-6">
+<h2 class="px-4 text-base font-medium">เลือกประเภทรถ</h2>
+<div class="mt-2 flex gap-3 overflow-x-auto px-4 pb-4" style="scrollbar-width: none; -ms-overflow-style: none;">
+<!-- Vehicle Card 1: Selected -->
+<div class="flex w-36 shrink-0 cursor-pointer flex-col items-center rounded-xl border-2 border-primary bg-primary/10 p-3 text-center dark:bg-primary/20">
+<img class="mb-2 h-12 w-auto" data-alt="Pickup truck icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXBJn8KHYyKDkP5XB1_RFsBvw3ao47hxm4YVOj1mfjdFS3noB4m5kIZ38YXUmQ9ITgeLji1zykNRzzonErwq9OV_syf-dXUuaZ_NG1RZe7JOjA_blnU5VwdBhioLiy9zcabbnn2hiq3ZNkSLz6Taf8JymZazSRnQA8-jgjBtt95x4bHiSVouQtMsrlspJKizfCJW8CcxJl2aJshP4qvUttgxS3Li4NYXyI4siXa1rvzMzFrH7t8srF3iS5PWOgOhhQIfA8MqURznXk"/>
+<p class="font-semibold text-text-light dark:text-text-dark">รถกระบะ</p>
+<p class="text-sm text-text-light/80 dark:text-text-dark/80">ราคาเริ่มต้น ฿250</p>
+</div>
+<!-- Vehicle Card 2 -->
+<div class="flex w-36 shrink-0 cursor-pointer flex-col items-center rounded-xl border border-neutral-light bg-neutral-light p-3 text-center dark:border-neutral-dark/50 dark:bg-neutral-dark/80">
+<img class="mb-2 h-12 w-auto" data-alt="6-wheeler truck icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4P3H9sZEMq7Eycg0QU5FGu5oUo4gI6H5e7BN0xoBUn8zdAKbh7X8Uw0PCSlWSiizEOOIh9mDg1sAG8xNUdeXHCOgZQ9EZpQBubmuvejK8djdwvVcJsN3kQ2uKuZv-Eup9ZckuuMIdRbeNy62pA9yV0skvLukLdpQk2q1U9P6OxjDvf3oN6gqDhYPDEXzQ-sQN439i4Jaqv6aYzsyHF_4H0PldOyEm9250Mt8xwLUtjH_gs493xtZ2KtGBCbf3QfJSMLySFWfTydpg"/>
+<p class="font-semibold text-text-light dark:text-text-dark">รถ 6 ล้อ</p>
+<p class="text-sm text-text-light/80 dark:text-text-dark/80">ราคาเริ่มต้น ฿1,200</p>
+</div>
+<!-- Vehicle Card 3 -->
+<div class="flex w-36 shrink-0 cursor-pointer flex-col items-center rounded-xl border border-neutral-light bg-neutral-light p-3 text-center dark:border-neutral-dark/50 dark:bg-neutral-dark/80">
+<img class="mb-2 h-12 w-auto" data-alt="10-wheeler truck icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNaA-ItGptGpR6Dfn0tX1sBWGlWJB4fs9asOZnQN24dTU6YwD1rUvohaau4NnQyZ9nG-UZG5um1URlgsKQi5GME-KAIn1NIAUYK51WjAAY-1EkXNnLQViVQ8zlj1DwatIgaWfzByzQ_h3vh1b1-R5uPhaMtcCAEiWt565qiv-ALYXd6KpQq6eYbz_k377LJu2tuePVhd69ZjGY_OBO2VU1QjSSZJ6NjpYam8a6G1X5YMf4cpk4jW-hZzoZla3-748li3Go8Y5LJE7g"/>
+<p class="font-semibold text-text-light dark:text-text-dark">รถ 10 ล้อ</p>
+<p class="text-sm text-text-light/80 dark:text-text-dark/80">ราคาเริ่มต้น ฿2,500</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer with CTA -->
+<footer class="fixed bottom-0 z-10 w-full border-t border-neutral-light bg-background-light/90 p-4 backdrop-blur-sm dark:border-neutral-dark/20 dark:bg-background-dark/90">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm text-text-light/80 dark:text-text-dark/80">ค่าบริการโดยประมาณ</p>
+<p class="text-xl font-bold text-text-light dark:text-text-dark">฿375.00</p>
+</div>
+<button class="h-12 rounded-lg bg-primary px-8 font-bold text-white shadow-lg shadow-primary/30 transition-transform hover:scale-105 active:scale-95">ตรวจสอบข้อมูลและยืนยัน</button>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ประวัติการจัดส่ง</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#005A9C",
+            "background-light": "#F0F2F5",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Manrope"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body>
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700">
+<div class="text-gray-800 dark:text-gray-200 flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-gray-800 dark:text-gray-200 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">ประวัติการจัดส่ง</h2>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+<div class="text-[#6C757D] dark:text-gray-400 flex border-none bg-white dark:bg-gray-800 items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-800 dark:text-gray-200 focus:outline-0 focus:ring-0 border-none bg-white dark:bg-gray-800 focus:border-none h-full placeholder:text-[#6C757D] dark:placeholder:text-gray-400 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="ค้นหาปลายทาง, วันที่..." value=""/>
+</div>
+</label>
+</div>
+<!-- Chips -->
+<div class="flex gap-3 px-4 pb-4 overflow-x-auto bg-background-light dark:bg-background-dark">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 dark:bg-primary/30 px-4">
+<p class="text-primary dark:text-blue-300 text-sm font-medium leading-normal">ช่วงวันที่</p>
+<span class="material-symbols-outlined text-primary dark:text-blue-300 !text-xl">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 px-4">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">ประเภทรถ</p>
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200 !text-xl">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 px-4">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">ทั้งหมด</p>
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200 !text-xl">expand_more</span>
+</button>
+</div>
+<!-- Delivery History List -->
+<div class="flex flex-col gap-3 px-4 pb-4">
+<!-- List Item 1 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="text-primary dark:text-blue-300 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-100 text-base font-bold leading-normal">ปลายทาง: สุขุมวิท</p>
+<p class="text-[#6C757D] dark:text-gray-400 text-sm font-normal leading-normal">15 ส.ค. 2567</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-gray-800 dark:text-gray-100 text-base font-bold">฿1,200</p>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">chevron_right</span>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-700 pt-3">
+<div class="flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/50 py-1.5 px-3 max-w-fit">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 !text-lg mr-1.5">check_circle</span>
+<p class="text-green-700 dark:text-green-300 text-xs font-medium">จัดส่งสำเร็จ</p>
+</div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="text-primary dark:text-blue-300 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-100 text-base font-bold leading-normal">ปลายทาง: รังสิต</p>
+<p class="text-[#6C757D] dark:text-gray-400 text-sm font-normal leading-normal">12 ส.ค. 2567</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-gray-800 dark:text-gray-100 text-base font-bold">฿850</p>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">chevron_right</span>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-700 pt-3">
+<div class="flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/50 py-1.5 px-3 max-w-fit">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 !text-lg mr-1.5">check_circle</span>
+<p class="text-green-700 dark:text-green-300 text-xs font-medium">จัดส่งสำเร็จ</p>
+</div>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm">
+<div class="flex items-start gap-4">
+<div class="text-primary dark:text-blue-300 flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-gray-800 dark:text-gray-100 text-base font-bold leading-normal">ปลายทาง: บางนา</p>
+<p class="text-[#6C757D] dark:text-gray-400 text-sm font-normal leading-normal">10 ส.ค. 2567</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-gray-800 dark:text-gray-100 text-base font-bold">฿950</p>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">chevron_right</span>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-700 pt-3">
+<div class="flex items-center justify-center rounded-full bg-green-100 dark:bg-green-900/50 py-1.5 px-3 max-w-fit">
+<span class="material-symbols-outlined text-green-600 dark:text-green-400 !text-lg mr-1.5">check_circle</span>
+<p class="text-green-700 dark:text-green-300 text-xs font-medium">จัดส่งสำเร็จ</p>
+</div>
+</div>
+</div>
+<!-- Empty State Example (commented out for demonstration) -->
+<!-- 
+      <div class="flex flex-col items-center justify-center text-center mt-20 p-8">
+        <div class="flex items-center justify-center size-24 bg-gray-200 dark:bg-gray-700 rounded-full mb-6">
+          <span class="material-symbols-outlined text-gray-500 dark:text-gray-400" style="font-size: 48px;">receipt_long</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">ยังไม่มีประวัติการจัดส่ง</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400 max-w-xs">เมื่อคุณทำการจัดส่งเรียบร้อยแล้ว ประวัติทั้งหมดจะแสดงที่นี่</p>
+        <button class="mt-8 flex h-12 items-center justify-center gap-x-2 rounded-xl bg-primary px-6 text-base font-bold text-white">
+          เริ่มต้นการจัดส่งครั้งแรก
+        </button>
+      </div>
+      -->
+</div>
+</div>
+</body></html>

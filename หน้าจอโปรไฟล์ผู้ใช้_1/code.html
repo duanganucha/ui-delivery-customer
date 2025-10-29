@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0d7ff2",
+              "background-light": "#f5f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Work Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<div class="flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-zinc-900 dark:text-zinc-200">arrow_back</span>
+</div>
+<h2 class="text-zinc-900 dark:text-zinc-200 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">บัญชีของฉัน</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-zinc-900 dark:text-zinc-200 gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+</button>
+</div>
+</div>
+<!-- Profile Header -->
+<div class="flex p-4 @container">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex gap-4 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-20 h-20 min-h-20" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAU6D6ee0ukq6Ej98gE5Rr0dpBHWa4Vg8HTD9YgjnojCgBmDURo3ke2SWrHGi5lDac5jDzYlyDo7-qsxAgZsjBfcfbQPDTRO6FvFNwAuOOPN25_cWzCIoeDv7zDN04WTzAXjjLYaxDGYtV6J0GbMSZ6oe9-UXbv4lhAR6enetOP-0oJIEAOrj4erbpq-Dok97H7finu26qA1ar2fSpcsCF3C0V6xay4CLaFIG8BiuOnQKzShcQWoWV9keZ8E_bCn6hstzbj60WwqrOE");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-zinc-900 dark:text-zinc-200 text-[22px] font-bold leading-tight tracking-[-0.015em]">สมศักดิ์ ใจดี</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-base font-normal leading-normal">somsak.j@email.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col px-4 space-y-8 mt-4 pb-24">
+<!-- Account Information Section -->
+<div class="flex flex-col">
+<h3 class="text-zinc-900 dark:text-zinc-200 text-lg font-bold leading-tight tracking-[-0.015em] pb-2 pt-4">ข้อมูลบัญชี</h3>
+<div class="bg-white dark:bg-zinc-800/50 rounded-xl overflow-hidden shadow-sm shadow-zinc-200/50 dark:shadow-none">
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between border-b border-zinc-200 dark:border-zinc-700">
+<div class="flex items-center gap-4 py-2">
+<div class="text-zinc-900 dark:text-zinc-200 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 shrink-0 size-10">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-zinc-900 dark:text-zinc-200 text-base font-normal leading-normal flex-1 truncate">ข้อมูลส่วนตัว</p>
+</div>
+<div class="shrink-0">
+<div class="text-zinc-500 dark:text-zinc-400 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between">
+<div class="flex items-center gap-4 py-2">
+<div class="text-zinc-900 dark:text-zinc-200 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 shrink-0 size-10">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<p class="text-zinc-900 dark:text-zinc-200 text-base font-normal leading-normal flex-1 truncate">ความปลอดภัย</p>
+</div>
+<div class="shrink-0">
+<div class="text-zinc-500 dark:text-zinc-400 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Settings Section -->
+<div class="flex flex-col">
+<h3 class="text-zinc-900 dark:text-zinc-200 text-lg font-bold leading-tight tracking-[-0.015em] pb-2">การตั้งค่า</h3>
+<div class="bg-white dark:bg-zinc-800/50 rounded-xl overflow-hidden shadow-sm shadow-zinc-200/50 dark:shadow-none">
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between border-b border-zinc-200 dark:border-zinc-700">
+<div class="flex items-center gap-4 py-2">
+<div class="text-zinc-900 dark:text-zinc-200 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 shrink-0 size-10">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<p class="text-zinc-900 dark:text-zinc-200 text-base font-normal leading-normal flex-1 truncate">การแจ้งเตือน</p>
+</div>
+<div class="shrink-0">
+<label class="relative inline-flex cursor-pointer items-center">
+<input checked="" class="peer sr-only" type="checkbox" value=""/>
+<div class="peer h-6 w-11 rounded-full bg-zinc-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-zinc-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-primary peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none dark:border-zinc-600 dark:bg-zinc-700"></div>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between border-b border-zinc-200 dark:border-zinc-700">
+<div class="flex items-center gap-4 py-2">
+<div class="text-zinc-900 dark:text-zinc-200 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 shrink-0 size-10">
+<span class="material-symbols-outlined">language</span>
+</div>
+<p class="text-zinc-900 dark:text-zinc-200 text-base font-normal leading-normal flex-1 truncate">ภาษา</p>
+</div>
+<div class="shrink-0 flex items-center gap-1">
+<p class="text-zinc-500 dark:text-zinc-400 text-base font-normal leading-normal">ไทย</p>
+<div class="text-zinc-500 dark:text-zinc-400 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between">
+<div class="flex items-center gap-4 py-2">
+<div class="text-zinc-900 dark:text-zinc-200 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 shrink-0 size-10">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<p class="text-zinc-900 dark:text-zinc-200 text-base font-normal leading-normal flex-1 truncate">ความเป็นส่วนตัว</p>
+</div>
+<div class="shrink-0">
+<div class="text-zinc-500 dark:text-zinc-400 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Section -->
+<div class="flex flex-col">
+<h3 class="text-zinc-900 dark:text-zinc-200 text-lg font-bold leading-tight tracking-[-0.015em] pb-2">กิจกรรม</h3>
+<div class="bg-white dark:bg-zinc-800/50 rounded-xl overflow-hidden shadow-sm shadow-zinc-200/50 dark:shadow-none">
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between border-b border-zinc-200 dark:border-zinc-700">
+<div class="flex items-center gap-4 py-2">
+<div class="text-zinc-900 dark:text-zinc-200 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 shrink-0 size-10">
+<span class="material-symbols-outlined">history</span>
+</div>
+<p class="text-zinc-900 dark:text-zinc-200 text-base font-normal leading-normal flex-1 truncate">ประวัติการใช้บริการ</p>
+</div>
+<div class="shrink-0">
+<div class="text-zinc-500 dark:text-zinc-400 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between">
+<div class="flex items-center gap-4 py-2">
+<div class="text-zinc-900 dark:text-zinc-200 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 shrink-0 size-10">
+<span class="material-symbols-outlined">bookmark</span>
+</div>
+<p class="text-zinc-900 dark:text-zinc-200 text-base font-normal leading-normal flex-1 truncate">ที่อยู่ที่บันทึกไว้</p>
+</div>
+<div class="shrink-0">
+<div class="text-zinc-500 dark:text-zinc-400 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Support & More Section -->
+<div class="flex flex-col">
+<h3 class="text-zinc-900 dark:text-zinc-200 text-lg font-bold leading-tight tracking-[-0.015em] pb-2">สนับสนุนและอื่นๆ</h3>
+<div class="bg-white dark:bg-zinc-800/50 rounded-xl overflow-hidden shadow-sm shadow-zinc-200/50 dark:shadow-none">
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between border-b border-zinc-200 dark:border-zinc-700">
+<div class="flex items-center gap-4 py-2">
+<div class="text-zinc-900 dark:text-zinc-200 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 shrink-0 size-10">
+<span class="material-symbols-outlined">help_center</span>
+</div>
+<p class="text-zinc-900 dark:text-zinc-200 text-base font-normal leading-normal flex-1 truncate">ศูนย์ช่วยเหลือ</p>
+</div>
+<div class="shrink-0">
+<div class="text-zinc-500 dark:text-zinc-400 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between">
+<div class="flex items-center gap-4 py-2">
+<div class="text-zinc-900 dark:text-zinc-200 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-700 shrink-0 size-10">
+<span class="material-symbols-outlined">gavel</span>
+</div>
+<p class="text-zinc-900 dark:text-zinc-200 text-base font-normal leading-normal flex-1 truncate">ข้อตกลงและเงื่อนไข</p>
+</div>
+<div class="shrink-0">
+<div class="text-zinc-500 dark:text-zinc-400 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Logout Button -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-rose-500/10 dark:bg-rose-500/20 text-rose-600 dark:text-rose-400 gap-2 text-base font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined">logout</span>
+<span>ออกจากระบบ</span>
+</button>
+</div>
+</div>
+</body></html>
